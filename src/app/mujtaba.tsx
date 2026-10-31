@@ -1,125 +1,94 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
-export default function ProfileScreen() {
+export default function MujtabaScreen() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.heading}>Developer Profile</Text>
-        <Text style={styles.subtitle}>Mobile Application Development</Text>
+    <ScrollView contentContainerStyle={styles.container}>
+      {/* Professional Initial Avatar */}
+      <View style={styles.avatarContainer}>
+        <Text style={styles.avatarText}>AM</Text>
+      </View>
+
+      <Text style={styles.name}>Ahmad Mujtaba</Text>
+      <Text style={styles.role}>Mobile Application Developer</Text>
+
+      <View style={styles.card}>
+        <Text style={styles.sectionTitle}>About Me</Text>
+        <Text style={styles.infoText}>
+          Passionate developer pursuing BS Computer Science, specializing in cross-platform mobile apps with React Native, Expo, and modern TypeScript architectures.
+        </Text>
       </View>
 
       <View style={styles.card}>
-        <View style={styles.avatarCircle}>
-          <Text style={styles.avatarText}>AM</Text>
-        </View>
-        <Text style={styles.name}>Ahmad Mujtaba</Text>
-        <Text style={styles.role}>React Native Developer</Text>
-
-        <View style={styles.divider} />
-
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Course:</Text>
-          <Text style={styles.value}>Mobile App Development</Text>
-        </View>
-
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Technology:</Text>
-          <Text style={styles.value}>React Native (Expo)</Text>
-        </View>
-
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Features:</Text>
-          <Text style={styles.value}>CRUD, Storage & Axios API</Text>
-        </View>
-
-        <View style={styles.infoRow}>
-          <Text style={styles.label}>Status:</Text>
-          <Text style={[styles.value, styles.statusActive]}>Production Ready</Text>
-        </View>
+        <Text style={styles.sectionTitle}>Project Highlights</Text>
+        <Text style={styles.skillBadge}>• React Native & Expo Router</Text>
+        <Text style={styles.skillBadge}>• CRUD & AsyncStorage Local Persistence</Text>
+        <Text style={styles.skillBadge}>• RESTful APIs Integration with Axios</Text>
+        <Text style={styles.skillBadge}>• Real-time Search & Multi-Category Filtering</Text>
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#f8fafc',
-    paddingHorizontal: 20,
-    paddingTop: 15,
-  },
-  header: {
-    marginBottom: 20,
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#0f172a',
-    marginBottom: 4,
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#64748b',
-  },
-  card: {
-    backgroundColor: '#ffffff',
-    borderRadius: 16,
     padding: 24,
     alignItems: 'center',
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-    elevation: 2,
+    backgroundColor: '#0f172a',
+    minHeight: '100%',
   },
-  avatarCircle: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
-    backgroundColor: '#0284c7',
-    justifyContent: 'center',
+  avatarContainer: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: '#2563eb',
     alignItems: 'center',
-    marginBottom: 12,
+    justifyContent: 'center',
+    marginTop: 20,
+    marginBottom: 16,
+    shadowColor: '#2563eb',
+    shadowOpacity: 0.4,
+    shadowRadius: 10,
+    elevation: 8,
   },
   avatarText: {
     color: '#ffffff',
-    fontSize: 24,
+    fontSize: 32,
     fontWeight: 'bold',
   },
   name: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: '#1e293b',
-    marginBottom: 2,
+    color: '#f8fafc',
   },
   role: {
-    fontSize: 14,
-    color: '#64748b',
+    fontSize: 15,
+    color: '#94a3b8',
+    marginBottom: 24,
+  },
+  card: {
+    backgroundColor: '#1e293b',
+    borderRadius: 12,
+    padding: 18,
+    width: '100%',
     marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#334155',
   },
-  divider: {
-    width: '100%',
-    height: 1,
-    backgroundColor: '#e2e8f0',
-    marginVertical: 14,
+  sectionTitle: {
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#38bdf8',
+    marginBottom: 10,
   },
-  infoRow: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 8,
-  },
-  label: {
+  infoText: {
     fontSize: 14,
-    color: '#64748b',
-    fontWeight: '500',
+    color: '#cbd5e1',
+    lineHeight: 22,
   },
-  value: {
+  skillBadge: {
     fontSize: 14,
-    color: '#1e293b',
-    fontWeight: '600',
-  },
-  statusActive: {
-    color: '#16a34a',
+    color: '#e2e8f0',
+    marginVertical: 4,
   },
 });
