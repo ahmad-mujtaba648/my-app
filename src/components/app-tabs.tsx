@@ -28,9 +28,9 @@ export default function AppTabs() {
       </NativeTabs.Trigger>
 
       <NativeTabs.Trigger name="mujtaba">
-        <NativeTabs.Trigger.Label>mujtaba</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Label>Mujtaba</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
-          src={require('@/assets/images/mujtaba.png')}
+          src={require('@/assets/images/react-logo.png')}
           renderingMode="template"
         />
       </NativeTabs.Trigger>
